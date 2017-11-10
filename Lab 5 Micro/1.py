@@ -15,12 +15,19 @@ def brazo_part1():
 
 def brazo_part2():
     frameBrazo2 = frame(pos=(0,250,0))
-    brazo=mybox = box(frame=frameBrazo2,pos=(0,0,0), length=50, height=300, width=80,color=color.blue)
+    brazo=box(frame=frameBrazo2,pos=(0,0,0), length=50, height=300, width=80,color=color.blue)
     rod2 = cylinder(frame=frameBrazo2,pos=(-100,-130,0), axis=(1,0,0), radius=10 ,color=color.blue, length=200)
     return frameBrazo2
+
+def brazo_part3():
+    frameBrazo3 = frame(pos=(0,420,0))
+    brazo=box(frame=frameBrazo3,pos=(0,0,100),length=50, height=50, width=300,color=color.yellow)
+    return frameBrazo3
+
 
 Panta = display(title='Brazo Robotico',x=50,y=0,width=1900,height=600,center=(0,0,0))
 frameBase = frame(pos=(0,0,0))
 Base = box(frame=frameBase,size=(2000,6,2000),color=color.white)
 brazo_part1()
 brazo_part2()
+brazo_part3()
