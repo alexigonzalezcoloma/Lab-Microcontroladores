@@ -17,8 +17,8 @@ def Base():
     return f
 
 def Brazo1(f):
-    f.brazo1 = box(frame=f,pos=(0,240,0), length=50, height=500, width=80,color=color.blue)
-    f.brazo2 = box(frame=f,pos=(-40,450,110), length=45, height=60, width=300,color=color.yellow)
+    f.brazo1 = box(frame=f,pos=(0,240,0), length=50, height=300, width=80,color=color.blue)
+    f.brazo2 = box(frame=f,pos=(-40,400,110), length=45, height=60, width=300,color=color.yellow)
     return f
 
 def Brazo2(f):
@@ -34,11 +34,12 @@ def Brazo2(f):
 parte1 = Base()
 parte2 = Brazo1(parte1)
 parte3 = Brazo2(parte2)
+parte2.brazo1.rotate(angle=math.radians(20), axis=(1,0,0), origin=(0,120,0))#parte2.brazo1.pos)
+
 while True:
     #get= Panta.mouse.getclick()
     #print get.pos
     rate(10);
     parte1.rotate(angle=math.radians(3), axis=(0,1,0), origin=parte1.pos)
-    parte2.brazo2.rotate(angle=math.radians(20), axis=(1,0,0), origin=(51, 450, -2))#parte2.brazo1.pos)
+    parte2.brazo2.rotate(angle=math.radians(20), axis=(1,0,0), origin=(51,400,-2))#parte2.brazo1.pos)
 
-    
