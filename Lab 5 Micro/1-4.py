@@ -6,7 +6,7 @@ Panta     = display(title='Brazo Robotico',x=50,y=0,width=640,height=640,center=
 frameBase = frame(pos = (0,0,0))
 Base      = box(frame=frameBase,size=(1000,6,1000),color=color.white)
 
-
+#0,360 a 0,45
 def  MAP(x,vi,vf,vis,vfs):
     return(x-vi)*(vfs-vis)/(vf-vi)+vis
 
@@ -49,15 +49,19 @@ b=0
 # part 1  de 0 a 360 part 2 de 0 a45 part3 -90 a 45 part4 de 0 a 360
 parte2.rotate(angle = math.radians(45), axis=(1,0,0), origin = (39,118,-25))
 parte3.rotate(angle = math.radians(45), axis=(1,0,0), origin = (0 ,140,-10))
-parte4.rotate(angle = math.radians(), axis=(0,0,1), origin = parte4.pos )
-
+parte4.rotate(angle = math.radians(45), axis=(0,0,1), origin = parte4.pos )
+grados=[]
 while True:
-    grados_1=int(puerto.readline()[0])
-    grados_2=int(puerto.readline()[1])
-    grados_3=int(puerto.readline()[2])
-    grados_4=int(puerto.readline()[3])
+    grados_1=puerto.readline()[:-1]
+    grados=grados_1.split(',')
+    grados[3].replace('/r','')
+    print grados[0]
+    print grados[1]
+    print grados[2]
+    print grados[3]
+    
     rate(10);    
     #parte1.rotate(angle = math.radians(2), axis=(0,1,0), origin = parte1.pos)
-    parte2.rotate(angle = math.radians(), axis=(1,0,0), origin = (39,118,-25))
+    #parte2.rotate(angle = math.radians(), axis=(1,0,0), origin = (39,118,-25))
     #parte3.rotate(angle = math.radians(), axis=(1,0,0), origin = (0 ,140,-10))
     #parte4.rotate(angle = math.radians(), axis=(0,0,1), origin = parte4.pos  )
