@@ -47,6 +47,12 @@ parte4 = Brazo3(parte3)
 fr     = frame(pos = (0,0,0))
 b=0
 # part 1  de 0 a 360 part 2 de 0 a45 part3 -90 a 45 part4 de 0 a 360
+
+g1=0
+g2=0
+g3=0
+g4=0
+
 grados=[]
 while True:
     parte2.rotate(angle = math.radians(int(0)), axis=(1,0,0), origin = (39,118,-25))
@@ -58,13 +64,22 @@ while True:
     grados_b2=map(int(grados[1]),0,360,0,45)
     grados_b3=map(int(grados[2]),0,360,-90,45)
     grados_b4=int(grados[3])
-
-    #print grados_b2
-    print grados_b3
-    #print grados_b4
     
-    rate(10);    
-    #parte1.rotate(angle = math.radians(grados_b1), axis=(0,1,0), origin = parte1.pos)
-    #parte2.rotate(angle = math.radians(int(grados[1])), axis=(1,0,0), origin = (39,118,-25))
-    parte3.rotate(angle = math.radians(grados_b3), axis=(1,0,0), origin = (0 ,140,-10))
-    #parte4.rotate(angle = math.radians(grados_b4), axis=(0,0,1), origin = parte4.pos  )
+    rate(4);
+    if(g1!=grados_b1):
+        parte1.rotate(angle = math.radians(grados_b1), axis=(0,1,0), origin = parte1.pos)
+    if(g2!=grados_b2):
+        parte2.rotate(angle = math.radians(grados_b2), axis=(1,0,0), origin = (39,118,-25))
+    if(g3!=grados_b3):
+        parte3.rotate(angle = math.radians(grados_b3), axis=(1,0,0), origin = (0 ,140,-10))
+    if(g4!=grados_b4):
+        parte4.rotate(angle = math.radians(grados_b4), axis=(0,0,1), origin = parte4.pos  )
+
+    g1=grados_b1
+    g2=grados_b2
+    g3=grados_b3
+    g4=grados_b4
+
+
+
+     
