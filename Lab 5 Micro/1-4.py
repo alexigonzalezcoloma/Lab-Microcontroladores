@@ -22,7 +22,7 @@ def Base():
 
 def Brazo1(f):
     f2        = frame(frame=f , pos=(2,300,0))
-    f2.brazo1 =   box(frame=f2, pos=(0,0,0), length=50, height=500, width=80,color=color.blue)
+    f2.brazo1 =   box(frame=f2, pos=(0,0,0), length=50, height=350, width=80,color=color.blue)
     
     return f2
 
@@ -55,7 +55,6 @@ g4=0
 
 grados=[]
 while True:
-    parte2.rotate(angle = math.radians(int(0)), axis=(1,0,0), origin = (39,118,-25))
     grados_1=puerto.readline()[:-1]
     grados=grados_1.split(',')
     grados[3].replace('/r','')
@@ -67,14 +66,17 @@ while True:
     
     rate(4);
     if(g1!=grados_b1):
-        parte1.rotate(angle = math.radians(grados_b1), axis=(0,1,0), origin = parte1.pos)
+        parte1.rotate(angle = math.radians(grados_b1-g1), axis=(0,1,0), origin = parte1.pos)
+        #parte1.rotate(angle = math.radians(grados_b1), axis=(0,1,0), origin = parte1.pos)
     if(g2!=grados_b2):
-        parte2.rotate(angle = math.radians(grados_b2), axis=(1,0,0), origin = (39,118,-25))
+        parte2.rotate(angle = math.radians(grados_b2-g2), axis=(1,0,0), origin = (39,118,-25))        
+        #parte2.rotate(angle = math.radians(grados_b2), axis=(1,0,0), origin = (39,118,-25))
     if(g3!=grados_b3):
-        parte3.rotate(angle = math.radians(grados_b3), axis=(1,0,0), origin = (0 ,140,-10))
+        parte3.rotate(angle = math.radians(grados_b3-g3), axis=(1,0,0), origin = (0 ,140,-10))
+        #parte3.rotate(angle = math.radians(grados_b3), axis=(1,0,0), origin = (0 ,140,-10))
     if(g4!=grados_b4):
-        parte4.rotate(angle = math.radians(grados_b4), axis=(0,0,1), origin = parte4.pos  )
-
+        parte4.rotate(angle = math.radians(grados_b4-g4), axis=(0,0,1), origin = parte4.pos  )
+        #parte4.rotate(angle = math.radians(grados_b4), axis=(0,0,1), origin = parte4.pos  )
     g1=grados_b1
     g2=grados_b2
     g3=grados_b3
